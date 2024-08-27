@@ -1,0 +1,12 @@
+services:
+  terraria:
+    build: .
+    environment:
+      - version=1449 # the version of terraria server to use
+    volumes:
+      - ./worlds:/worlds
+      - ./logs:/logs
+      - ./config:/home/serverconfig.txt
+    ports:
+      - "7777:7777"
+    restart: on-failure
